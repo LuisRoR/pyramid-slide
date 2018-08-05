@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+
+        body {
+            background-color: rgb(188, 235, 247);
+            display: block;
+            margin: 180px;
+            font-family: "Courier New", monospace;
+            text-align: center;
+        }
+
+        b {
+            font-size: 20px;
+        }
+        .canvas {
+            background-color: rgb(185, 220, 226);
+        }
+
+        .header {
+            background-color: rgb(25, 25, 65);
+            color: rgb(198, 213, 216);
+            height: 30%;
+            text-align: center;
+            padding: 1%;
+        }
+
+        .datacontainer {
+            background-color: rgb(198, 213, 216);
+            border-radius: 5px;
+            padding: 1%;
+        }
+
+        .bold-option {
+            font-weight: bolder;
+            font-size: 20px;
+
+        }
+
+        #draw-form {
+            margin: 5%;
+            background-color: rgb(214, 243, 250);
+            border: 2px solid rgb(25, 25, 65);
+            border-radius: 5px;
+            padding: 1%;      
+        }
+
+        #pyramid {
+            color: rgb(25, 25, 65);
+            line-height: 0;
+            font-size: 18px;
+            font-weight: 550;
+        }
+
+        #chosen-symbol {
+            font-weight: bolder;
+        }
+
+    </style>
+</head>
+
+<body onload="drawPyramid()">
+    <div class = "canvas">
+        <div class = "header">
+            <h1>Pyramid Slide</h1>
+        </div>
+        <br>
+
+        <form id="draw-form" >
+            <div class="datacontainer">
+
+                <label>Brick symbol: </label>
+                <select ID="chosen-symbol" class="bold-option" onchange="drawPyramid()" value="#">
+                    <option value="#">#</option>
+                    <option value="@">@</option>
+                    <option value="X">X</option>
+                    <option value="$">$</option>  
+                </select>
+
+                &nbsp; &nbsp;
+
+                <label>How high?: </label>      
+                <input type="range" id="slider-height" oninput="drawPyramid()" min="1" max="20" value="10">
+                <b id="show-height"></b>
+
+            </div>
+            <br><br>
+            <div id="pyramid"></div>
+            <br><br>
+        </form>
+        <br><br>
+    </div>
+    <br><br>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
